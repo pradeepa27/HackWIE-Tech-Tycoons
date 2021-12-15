@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="action"
+            type="com.andruid.magic.helpfulsense.database.entity.Action" />
+    </data>
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frontView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#003A68">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/actionTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="7dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="#090909"
+                android:gravity="center_vertical"
+                android:text="@{action.message}"
+                android:textAlignment="gravity"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Help" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/sendBtn"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:src="@android:drawable/ic_menu_send"
+                app:layout_constraintEnd_toStartOf="@id/dragHandleView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/dragHandleView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+</layout>
